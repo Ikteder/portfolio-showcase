@@ -32,3 +32,4 @@
 - Published the `main` branch root with GitHub Pages at <https://ikteder.github.io/portfolio-showcase/>.
 - Added live bidirectional navigation between the showcase and <https://ikteder.github.io/>.
 - Verified both public sites after deployment with no browser warnings or errors.
+- Added a complete interactive-site profile directory mirroring the classic portfolio's professional destinations and both public contact addresses.

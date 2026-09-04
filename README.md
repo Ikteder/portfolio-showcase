@@ -16,6 +16,7 @@ Serve this folder with any static file server and open `index.html`. No build st
 - An accessible tabbed research-evidence story
 - A three-scenario deployment decision game
 - Employer-focused project narratives and direct links to primary evidence
+- A complete professional profile directory covering the primary site, code, publications, research identity, institutional affiliation, CV, résumé, source, and contact
 - Responsive layouts, keyboard support, and reduced-motion behavior
 
 ## Publishing
