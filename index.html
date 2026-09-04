@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive tour of Ikteder Akhand Udoy's work in efficient AI, ML systems, and deployment-aware research.">
+  <meta name="theme-color" content="#090b10">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ikteder.github.io/portfolio-showcase/">
+  <meta property="og:title" content="Ikteder Akhand Udoy — ML Systems, Under Pressure">
+  <meta property="og:description" content="Interactive research demos, deployment trade-offs, and evidence-backed ML systems work.">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Ikteder Akhand Udoy — ML Systems, Under Pressure</title>
+  <link rel="canonical" href="https://ikteder.github.io/portfolio-showcase/">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Ikteder Akhand Udoy","jobTitle":"PhD Researcher and Machine Learning Engineer","affiliation":{"@type":"CollegeOrUniversity","name":"Boise State University"},"sameAs":["https://github.com/Ikteder","https://www.linkedin.com/in/ikteder-akhand-udoy-680a4122a","https://scholar.google.com/citations?hl=en&user=7CEKc9wAAAAJ","https://orcid.org/0009-0006-1327-3683"]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the work</a>
+  <div class="progress" aria-hidden="true"><span id="scroll-progress"></span></div>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Ikteder Akhand Udoy, home"><span>IAU</span><b>Ikteder Akhand Udoy</b></a>
+    <nav aria-label="Primary navigation">
+      <a href="#playground">Playground</a><a href="#microscope">Research</a><a href="#lab">Lab</a><a href="#work">Work</a>
+      <a class="nav-cta" href="https://ikteder.github.io/">Classic portfolio ↗</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <canvas id="field" aria-hidden="true"></canvas>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="signal"></span> PhD in Computing candidate · Data Science &amp; ML</p>
+        <h1>I make machine learning <em>survive contact</em> with the real world.</h1>
+        <p class="lede">My work asks what happens after the accuracy score: when memory is tight, arithmetic is expensive, data shifts, and results need to hold up under scrutiny.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#lab">Enter the systems lab <span>↓</span></a>
+          <a class="button ghost" href="https://github.com/Ikteder">Inspect the code ↗</a>
+        </div>
+      </div>
+      <div class="hero-meter" aria-label="Areas of practice">
+        <span>01 / Efficient AI</span><span>02 / Verification</span><span>03 / Deployment</span><span>04 / Research</span>
+      </div>
+      <div class="hero-proof" aria-label="Research profile"><span>Peer-reviewed research</span><span>Reproducible systems</span><span>Production engineering</span></div>
+      <p class="scroll-cue">Scroll to stress-test a model <span>↓</span></p>
+    </section>
+
+    <section class="manifesto reveal">
+      <p class="section-index">01 — THE QUESTION</p>
+      <h2>A model is not finished when it trains.<br><span>It is finished when the evidence travels with it.</span></h2>
+      <div class="manifesto-grid">
+        <p>I connect training-time choices to latency, memory, arithmetic cost, failure cases, and deployment constraints.</p>
+        <dl><div><dt>5</dt><dd>research outputs</dd></div><div><dt>10+</dt><dd>substantial builds</dd></div><div><dt>3</dt><dd>deployment domains</dd></div></dl>
+      </div>
+    </section>
+
+    <section class="microscope reveal" id="microscope">
+      <div class="section-heading">
+        <div><p class="section-index">02 — RESEARCH, MADE TANGIBLE</p><h2>Touch the idea.</h2></div>
+        <p>Two small simulations turn my research interests into something you can inspect in seconds: efficient arithmetic and dependable data.</p>
+      </div>
+      <div class="demo-grid">
+        <article class="demo-card quant-demo">
+          <div class="demo-card-head"><span>DEMO 01</span><span>POWER-OF-TWO QAT</span></div>
+          <h3>Quantization microscope</h3>
+          <p>Move a learned weight. The deployment codebook snaps it to zero or a signed power of two.</p>
+          <label for="weight-slider">Floating-point weight <output id="weight-output">−0.37</output></label>
+          <input id="weight-slider" type="range" min="-100" max="100" value="-37">
+          <div class="number-line" aria-hidden="true"><span>−1</span><span>−½</span><span>−¼</span><span>−⅛</span><span>0</span><span>⅛</span><span>¼</span><span>½</span><span>1</span><i id="weight-marker"></i></div>
+          <div class="transform-readout">
+            <div><small>LEARNED</small><strong id="weight-original">−0.37</strong></div><span>→</span>
+            <div><small>DEPLOYED</small><strong id="weight-quantized">−2<sup>−2</sup></strong></div><span>→</span>
+            <div><small>ARITHMETIC</small><strong id="weight-operation">sign + shift 2</strong></div>
+          </div>
+          <p class="demo-note" id="quant-error">Absolute rounding error: 0.120</p>
+          <a class="evidence-link" href="https://github.com/Ikteder/Po2QAT-Power-of-Two-Quantization-Algorithm">Inspect the teaching implementation ↗</a>
+        </article>
+        <article class="demo-card drift-demo">
+          <div class="demo-card-head"><span>DEMO 02</span><span>DATA RELIABILITY</span></div>
+          <h3>Drift signal</h3>
+          <p>Move incoming sensor data away from the training baseline and watch the monitoring decision change.</p>
+          <label for="drift-slider">Simulated mean shift <output id="drift-output">0.40σ</output></label>
+          <input id="drift-slider" type="range" min="0" max="200" value="40">
+          <svg id="drift-chart" viewBox="0 0 620 240" role="img" aria-labelledby="drift-title drift-desc">
+            <title id="drift-title">Baseline and current sensor distributions</title><desc id="drift-desc">A simulated current distribution moves as the mean-shift control changes.</desc>
+            <line x1="30" y1="205" x2="590" y2="205"></line><path id="baseline-curve"></path><path id="current-curve"></path>
+          </svg>
+          <div class="drift-status"><span id="drift-light"></span><div><small>MONITOR STATUS</small><strong id="drift-label">Stable</strong><p id="drift-action">Continue monitoring. No intervention indicated.</p></div></div>
+          <p class="demo-note">Toy Gaussian simulation for explaining monitoring logic—not a production detector.</p>
+          <a class="evidence-link" href="https://github.com/Ikteder/predictive-maintenance-early-warning-drift-detection">Inspect the monitoring project ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="playground reveal" id="playground">
+      <div class="playground-intro">
+        <p class="section-index">03 — LIVE ML PLAYGROUND</p>
+        <h2>Train the boundary.</h2>
+        <p>This is a real tiny neural network running in your browser—not a video. Change the data, add noise, and watch gradient descent reshape its decision surface.</p>
+        <div class="prototype-badge"><span></span> Interactive concept · browser experiment</div>
+        <div class="play-controls">
+          <label for="dataset-select">Synthetic dataset</label>
+          <select id="dataset-select"><option value="linear">Linear split</option><option value="xor">XOR quadrants</option><option value="wave">Wave boundary</option></select>
+          <label for="noise-slider">Feature noise <output id="noise-output">0.10</output></label>
+          <input id="noise-slider" type="range" min="0" max="35" value="10">
+          <div class="train-actions"><button class="button primary" id="train-model">Train 200 epochs</button><button class="button ghost" id="reset-model">Reset</button></div>
+        </div>
+        <p class="demo-note">Educational synthetic data only. Results are generated locally and are not portfolio benchmark claims.</p>
+      </div>
+      <div class="model-console">
+        <div class="console-top"><span>LIVE MODEL / 2→8→1 MLP</span><span id="training-state">READY</span></div>
+        <svg id="boundary-chart" viewBox="0 0 640 470" role="img" aria-labelledby="boundary-title boundary-desc">
+          <title id="boundary-title">Neural network decision boundary</title><desc id="boundary-desc">Synthetic data points over a probability field that updates after training.</desc>
+          <g id="boundary-grid"></g><g id="sample-points"></g>
+        </svg>
+        <div class="console-metrics"><div><small>EPOCH</small><strong id="epoch-value">0</strong></div><div><small>LOSS</small><strong id="loss-value">—</strong></div><div><small>TRAIN ACC.</small><strong id="accuracy-value">—</strong></div></div>
+        <div class="loss-strip"><span>LOSS HISTORY</span><svg id="loss-chart" viewBox="0 0 420 70" role="img" aria-label="Training loss history"><polyline id="loss-line" points=""></polyline></svg></div>
+      </div>
+    </section>
+
+    <section class="lab reveal" id="lab">
+      <div class="section-heading">
+        <div><p class="section-index">04 — INTERACTIVE SYSTEMS LAB</p><h2>Choose your constraint.</h2></div>
+        <p>Move the priority slider. The recommendation changes using measured demo results from my Edge AI Benchmark Suite.</p>
+      </div>
+      <div class="lab-shell">
+        <div class="lab-controls">
+          <label for="priority">Deployment priority</label>
+          <div class="range-labels"><span>Speed</span><span>Balanced</span><span>Quality</span></div>
+          <input id="priority" type="range" min="0" max="100" value="50" aria-describedby="priority-note">
+          <p id="priority-note" class="fine-print">Illustrative ranking of models within the vision benchmark; measurements are environment-specific.</p>
+          <div class="recommendation">
+            <span>Selected system</span>
+            <strong id="recommended-model">MobileNetV3</strong>
+            <p id="recommended-reason">The compact trade-off: strong accuracy without the latency and footprint of the largest vision model.</p>
+          </div>
+          <div class="metric-pair"><div><span>Accuracy</span><b id="metric-accuracy">86.0%</b></div><div><span>Latency</span><b id="metric-latency">18.829 ms</b></div></div>
+        </div>
+        <div class="chart-panel">
+          <div class="chart-head"><span>Accuracy ↗</span><span>Latency →</span></div>
+          <svg id="tradeoff-chart" viewBox="0 0 720 430" role="img" aria-labelledby="chart-title chart-desc">
+            <title id="chart-title">Vision model accuracy and latency trade-off</title>
+            <desc id="chart-desc">Three measured demo points compare MobileNetV3, EfficientNet-B0, and ConvNeXt-Tiny.</desc>
+            <g class="grid"></g><g class="axes"></g><g class="points"></g>
+          </svg>
+          <p class="chart-source">Demo run · CIFAR-10 subset · measured values, not universal hardware claims</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="evidence reveal" id="evidence">
+      <div class="section-heading inverse">
+        <div><p class="section-index">05 — EVIDENCE, NOT DECORATION</p><h2>Every claim needs a trail.</h2></div>
+        <p>Explore how I structure research so another person can inspect the choices, reproduce the run, and find the limits.</p>
+      </div>
+      <div class="evidence-tabs" role="tablist" aria-label="Evidence layers">
+        <button role="tab" aria-selected="true" aria-controls="panel-method" id="tab-method">Method</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-measure" id="tab-measure">Measure</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-break" id="tab-break">Break</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-ship" id="tab-ship">Ship</button>
+      </div>
+      <div class="evidence-stage">
+        <article id="panel-method" role="tabpanel" aria-labelledby="tab-method">
+          <span class="stage-number">01</span><div><h3>Control the experiment</h3><p>Versioned configurations, fixed seeds, documented datasets, and leakage-aware splits make the comparison interpretable.</p><code>config → seed → split → run</code></div>
+        </article>
+        <article id="panel-measure" role="tabpanel" aria-labelledby="tab-measure" hidden>
+          <span class="stage-number">02</span><div><h3>Measure more than accuracy</h3><p>Latency, throughput, memory, model size, FLOPs, and energy proxies reveal trade-offs hidden by a single headline metric.</p><code>quality × cost × constraints</code></div>
+        </article>
+        <article id="panel-break" role="tabpanel" aria-labelledby="tab-break" hidden>
+          <span class="stage-number">03</span><div><h3>Study the failures</h3><p>Confusion matrices, per-class metrics, drift signals, and hard examples show where the system stops being dependable.</p><code>average ≠ guarantee</code></div>
+        </article>
+        <article id="panel-ship" role="tabpanel" aria-labelledby="tab-ship" hidden>
+          <span class="stage-number">04</span><div><h3>Export with verification</h3><p>Cross-runtime parity checks and deployment reports keep the artifact connected to the model that was evaluated.</p><code>export → compare → approve</code></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="game reveal" aria-labelledby="game-title">
+      <div class="game-copy"><p class="section-index">06 — TWO-MINUTE DECISION</p><h2 id="game-title">Would you ship it?</h2><p>You own an edge vision feature. Pick the best model for each deployment brief. The technically “best” answer changes with the constraint.</p><div class="score">Decision score <strong><span id="score">0</span>/3</strong></div></div>
+      <div class="scenario-card">
+        <div class="scenario-meta"><span id="scenario-count">Scenario 1 of 3</span><span id="scenario-tag">ON-DEVICE</span></div>
+        <h3 id="scenario-title">A battery-powered camera needs a useful result before the next frame.</h3>
+        <p id="scenario-detail">Latency matters most. Some accuracy can be traded for a substantially lighter response.</p>
+        <div id="choices" class="choices"></div>
+        <div id="verdict" class="verdict" aria-live="polite"></div>
+        <button id="next-scenario" class="button primary" hidden>Next scenario →</button>
+      </div>
+    </section>
+
+    <section class="work reveal" id="work">
+      <div class="section-heading">
+        <div><p class="section-index">07 — SELECTED SYSTEMS</p><h2>Built through the full loop.</h2></div>
+        <p>Each project pairs implementation with documentation, evaluation, and explicit limitations.</p>
+      </div>
+      <div class="project-list">
+        <a href="https://github.com/Ikteder/Po2QAT-Power-of-Two-Quantization-Algorithm" class="project">
+          <span class="project-no">01</span><div><p>Efficient AI · PyTorch</p><h3>Power-of-Two Quantization Lab</h3><span>Training, export, and exact reconstruction of signed power-of-two weights.</span></div><b>Explore ↗</b>
+        </a>
+        <a href="https://github.com/Ikteder/edge-ai-benchmark-suite" class="project">
+          <span class="project-no">02</span><div><p>Benchmarking · Systems</p><h3>Edge AI Benchmark Suite</h3><span>Quality, latency, memory, model size, and Pareto analysis in one reproducible harness.</span></div><b>Explore ↗</b>
+        </a>
+        <a href="https://github.com/Ikteder/model-export-verification-benchmarking-toolkit" class="project">
+          <span class="project-no">03</span><div><p>Deployment · Verification</p><h3>Model Export & Benchmarking Toolkit</h3><span>Cross-runtime parity checks, failure records, and deployment reports.</span></div><b>Explore ↗</b>
+        </a>
+        <a href="https://github.com/Ikteder/llm-agent-workflows" class="project">
+          <span class="project-no">04</span><div><p>Agentic tooling · RAG</p><h3>Experiment & Knowledge Workflows</h3><span>Grounded search and cited summaries over real ML artifacts.</span></div><b>Explore ↗</b>
+        </a>
+      </div>
+    </section>
+
+    <section class="record reveal" id="record">
+      <div class="record-intro"><p class="section-index">08 — RESEARCH RECORD</p><h2>Peer reviewed.<br>Publicly inspectable.</h2><p>Five research outputs spanning efficient language models, edge intelligence, medical imaging, and AI systems. Status is stated explicitly; links go to the primary record.</p><a class="button ghost" href="https://scholar.google.com/citations?hl=en&amp;user=7CEKc9wAAAAJ">Google Scholar ↗</a></div>
+      <div class="publication-list">
+        <a href="https://doi.org/10.1109/ICAD69378.2026.11609079"><span>2026 · IEEE ICAD · First author</span><h3>Multiplier-Free LLM Linear Layers via Weights-Only Power-of-Two QAT</h3><b>DOI ↗</b></a>
+        <a href="https://doi.org/10.1109/MeMeA65319.2025.11068064"><span>2025 · IEEE MeMeA · First author</span><h3>Lightweight Binarized Neural Network for Real-Time Sleep Apnea Detection on Edge Hardware</h3><b>DOI ↗</b></a>
+        <a href="https://doi.org/10.3390/sym17030469"><span>2025 · Symmetry · Journal review</span><h3>AI-Driven Technology in Heart Failure Detection and Diagnosis</h3><b>DOI ↗</b></a>
+      </div>
+    </section>
+
+    <section class="closing reveal">
+      <p class="section-index">09 — NEXT</p>
+      <h2>Looking for someone who can connect research ambition to engineering reality?</h2>
+      <div class="closing-actions"><a class="button light" href="mailto:ikteder.akhand@gmail.com">Start a conversation ↗</a><a href="https://ikteder.github.io/output/pdf/Ikteder_Akhand_Udoy_Resume.pdf">Download résumé ↓</a><a href="https://www.linkedin.com/in/ikteder-akhand-udoy-680a4122a">LinkedIn ↗</a></div>
+    </section>
+  </main>
+  <footer><span>Ikteder Akhand Udoy · Boise, Idaho</span><span>Research should be inspectable.</span><span id="year"></span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
