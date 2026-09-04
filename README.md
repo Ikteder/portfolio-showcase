@@ -24,7 +24,7 @@ This project is intended for the public repository `Ikteder/portfolio-showcase` 
 
 ## Current status
 
-Local implementation is complete, including the browser-native ML playground. Publication has not been performed.
+Published and operational at <https://ikteder.github.io/portfolio-showcase/>. The browser-native ML playground and bidirectional classic-portfolio navigation were verified on the live deployment on 2026-09-04.
 
 ## Limitations
 

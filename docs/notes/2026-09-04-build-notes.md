@@ -25,3 +25,10 @@
 - Visitors can select linear, XOR, or concentric-ring synthetic data; vary feature noise; and run 200 real full-batch gradient-descent epochs.
 - The probability field, samples, cross-entropy loss, accuracy, and loss history are rendered from the current model state.
 - Labeled the feature as an interactive concept and educational synthetic-data experiment, not completed research or benchmark evidence.
+
+## Deployment
+
+- Created the public GitHub repository <https://github.com/Ikteder/portfolio-showcase>.
+- Published the `main` branch root with GitHub Pages at <https://ikteder.github.io/portfolio-showcase/>.
+- Added live bidirectional navigation between the showcase and <https://ikteder.github.io/>.
+- Verified both public sites after deployment with no browser warnings or errors.
