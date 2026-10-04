@@ -16,6 +16,7 @@ Serve this folder with any static file server and open `index.html`. No build st
 - An accessible tabbed research-evidence story
 - A three-scenario deployment decision game
 - Employer-focused project narratives and direct links to primary evidence
+- A status-explicit research record covering peer-reviewed work, a preprint, and the SPARQ manuscript under review at IEEE Transactions on Artificial Intelligence
 - A complete professional profile directory covering the primary site, code, publications, research identity, institutional affiliation, CV, résumé, source, and contact
 - Responsive layouts, keyboard support, and reduced-motion behavior
 
@@ -26,6 +27,8 @@ This project is intended for the public repository `Ikteder/portfolio-showcase` 
 ## Current status
 
 Published and operational at <https://ikteder.github.io/portfolio-showcase/>. The browser-native ML playground and bidirectional classic-portfolio navigation were verified on the live deployment on 2026-09-04.
+
+The SPARQ submission status was added on 2026-10-03 using author-confirmed wording. It is presented as submitted and under review, not accepted or published.
 
 ## Limitations
 
