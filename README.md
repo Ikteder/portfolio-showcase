@@ -16,6 +16,7 @@ Serve this folder with any static file server and open `index.html`. No build st
 - An accessible tabbed research-evidence story
 - A three-scenario deployment decision game
 - Employer-focused project narratives and direct links to primary evidence
+- Curated recent systems work, including FallbackLens for LLM fallback reliability and RankQuake for uncertainty-aware decision auditing
 - A status-explicit research record covering peer-reviewed work, a preprint, and the SPARQ manuscript under review at IEEE Transactions on Artificial Intelligence
 - A complete professional profile directory covering the primary site, code, publications, research identity, institutional affiliation, CV, résumé, source, and contact
 - Responsive layouts, keyboard support, and reduced-motion behavior
